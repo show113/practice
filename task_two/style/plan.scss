@@ -1,0 +1,266 @@
+@import './reset';
+@import './base';
+@import './layout';
+
+.container.w904{
+	max-width: calc(904px + 32px);
+}
+.key-vision{
+	@media (max-width: 376px) {
+		background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/banner_sm.svg");
+		background-position-y: 74px;
+		height: calc(495px + 74px);
+		margin-bottom: 60px;
+	}
+	height: 546px;
+	margin-bottom: 24px;
+	position: relative;
+	background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/banner.svg");
+	background-repeat: no-repeat;
+	background-position: top right;
+	&::after{
+		@media (max-width: 376px) {
+			border-bottom-left-radius: 150px;
+			height: calc(495px + 74px);
+		}
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		width: 100%;
+		height: 470px;
+		background-color: #F7F9FD;
+		border-bottom-left-radius: 300px;
+	}
+	.content{
+		display: flex;
+		align-items: center;
+		height: 292px;
+		@media (max-width: 376px) {
+			align-items: flex-start;
+			padding-top: 48px;
+		}
+		h2{
+			margin-bottom: 16px;
+			font-size: 48px;
+			font-weight: bold;
+			line-height: 70px;
+			@media (max-width: 376px) {
+				font-size: 32px;
+				line-height: 46px;
+			}
+		}
+		.text{
+			line-height: 1.5;
+		}
+	}
+}
+.plan{
+	margin-bottom: 100px;
+	@media (max-width: 376px) {
+		margin-bottom: 60px;
+	}
+	h3{
+		text-align: center;
+		margin-bottom: 48px;
+	}
+	.btns{
+		width: 100%;
+		margin-bottom: 48px;
+		display: flex;
+		justify-content: center;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		& li+li{
+			margin-left: 16px;
+		}
+		li{
+			white-space: nowrap;
+		}
+		@media (max-width:768px) {
+			justify-content: start;
+		}
+		@media (max-width: 376px) {
+			margin-bottom: 32px;
+			& li+li{
+				margin-left: 6px;
+			}
+			.btn-green{
+				padding: 8px 16px;
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+	}
+	.card{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 0 -10px;
+		// column-gap: 20px;
+		&-item{
+			@media (max-width: 768px) {
+				width: 100%;
+				max-width: 444px;
+				&+.card-item{
+					margin-top: 24px;
+				}
+			}
+			margin: 0 10px;
+			padding-bottom: 32px;
+			width: calc(50% - 20px);
+			border-radius: 12px;
+            box-shadow: 0px 2px 10px #00000014;
+			text-align: center;
+		}
+		.title{
+			padding: 16px 24px;
+			font-size: 24px;
+			font-weight: bold;
+			line-height: 35px;
+			border-bottom: 1px solid #DDDDDD;
+		}
+		.text{
+			padding: 32px 24px;
+			line-height: 1.5;
+			@media (max-width: 376px) {
+				padding: 24px 16px;
+			}
+		}
+		.calculation{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.rectangle{
+				width: 38%;
+				padding: 24px 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				background-color: #F5F5F5;
+				border-radius: 12px;
+				@media (max-width: 376px) {
+					width: 139px;
+					padding: 16px 0;
+				}
+				@media (max-width: 320px) {
+					width: 114px;
+				}
+			}
+			.subtitle{
+				margin-bottom: 8px;
+				font-size: 12px;
+				line-height: 17px;
+			}
+			.value{
+				font-size: 32px;
+				line-height: 35px;
+				@media (max-width: 376px) {
+					font-size: 28px;
+					line-height: 32px;
+				}
+				&.green{
+					color: #56C4C5;
+				}
+				sub{
+					margin-left: 8px;
+					font-size: 12px;
+					line-height: 17px;
+				}
+			}
+			.equal{
+				margin: 0 4.53%;
+				font-size: 29px;
+				line-height: 42px;
+				@media (max-width: 376px) {
+					margin: 0 6px;
+					font-size: 24px;
+					line-height: 35px;
+				}
+			}
+		}
+		.list{
+			@media (max-width: 376px) {
+				font-size: 14px;
+				line-height: 20px;
+			}
+			margin: 32px 0;
+			text-align: left;
+			li{
+				margin-right: 6%;
+				margin-left: calc(6% + 32px);
+				text-indent: -32px;
+			}
+			li::before{
+				content: "";
+				display: inline-block;
+				margin-right: 12px;
+				width: 20px;
+				height: 16px;
+				background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_check.svg");
+				vertical-align: middle;
+			}
+			li+li{
+				margin-top: 20px;
+			}
+		}
+	}
+}
+.faq{
+	margin-bottom: 100px;
+	@media (max-width: 376px) {
+		margin-bottom: 60px;
+	}
+	h3{
+		text-align: center;
+		margin-bottom: 48px;
+		@media (max-width: 376px) {
+			margin-bottom: 32px;
+		}
+	}
+	.card{
+		li+li{
+			margin-top: 16px;
+		}
+		&-item{
+			&.actived .question{
+				color: #56C4C5;
+				font-weight: bold;
+			}
+			&.actived .question::after{
+				background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_minus.svg");
+			}
+			&.actived .ans{
+				color: #747474;
+			}
+			padding: 16px 32px;
+			font-size: 18px;
+			line-height: 28px;
+			border-radius: 12px;
+            box-shadow: 0px 2px 10px #00000014;
+			cursor: pointer;
+			@media (max-width: 376px) {
+				padding: 16px;
+				font-size: 16px;
+				line-height: 24px;
+			}
+			.question{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.question::after{
+				content: "";
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_plus.svg");
+				background-repeat: no-repeat;
+			}
+			.ans{
+				margin: 24px 0 16px;
+			}
+		}
+	}
+}

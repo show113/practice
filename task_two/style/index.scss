@@ -1,0 +1,380 @@
+@import './reset';
+@import './base';
+@import './layout';
+
+
+.key-vision{
+    // height: 100vh;  /* can keep view in first screen */
+    height: 870px;  /* but I still use this way, I prefer it */
+    padding-bottom: 100px;
+    background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/bg_home.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    @media (max-width: 768px) {
+        height: auto;
+    }
+    @media (max-width: 376px) {
+        background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/bg_home_sm.svg");
+        background-position: bottom;
+        padding-bottom: 0;
+        margin-bottom: 92px;
+    }
+    .content{
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        height: 534px;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            height: auto;
+        }
+        ul{
+            width: 50%;
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+            .slogan{
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 26px;
+                color: #56C4C5;
+                @media (max-width: 576px) {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+            h2{
+                margin: 8px 0 16px;
+                font-size: 48px;
+                font-weight: bold;
+                line-height: 70px;
+                @media (max-width: 576px) {
+                    font-size: 32px;
+                    line-height: 46px;
+                }
+            }
+            .text{
+                font-size: 20px;
+                line-height: 29px;
+                @media (max-width: 576px) {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+        img{
+            width: 50%;
+            @media (max-width: 768px) {
+                width: 100%;
+                max-width: 500px;
+            }
+            @media (max-width: 376px) {
+                margin-top: 32px;
+                max-width: 304px;
+            }
+        }
+    }
+}
+.social{
+    margin-bottom: 100px;
+    @media (max-width: 376px) {
+        margin-bottom: 60px;
+    }
+    h3{
+        margin-bottom: 48px;
+        text-align: center;
+        @media (max-width: 376px) {
+            margin-bottom: 32px;
+        }
+    }
+    .card{
+        display: flex;
+        @media (max-width: 768px) {
+            // flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+        &-item{
+            flex: 1;
+            text-align: center;
+            @media (max-width: 768px) {
+                width: 240px;
+                margin-bottom: 24px;
+                // flex: auto;
+            }
+        }
+        img{
+            width: 90px;
+            height: 90px;
+        }
+        .title{
+            margin: 24px 0;
+            font-size: 24px;
+            line-height: 35px;
+            font-weight: bold;
+            @media (max-width: 376px) {
+                margin: 16px 0;
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+        .text{
+            color: #747474;
+            line-height: 1.5;
+        }
+    }
+}
+.role{
+    margin-bottom: 100px;
+    text-align: center;
+    @media (max-width: 768px) {
+        margin-bottom: calc(60px - 24px);
+    }
+    h3{
+        margin-bottom: 16px;
+    }
+    .slogan{
+        margin-bottom: 48px;
+        font-size: 20px;
+        line-height: 29px;
+        @media (max-width: 376px) {
+            margin-bottom: 32px;
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+    .card{
+        display: flex;
+        column-gap: 16px;
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &-item{
+            width: 25%;
+            padding-bottom: 24px;
+            border-radius: 12px;
+            box-shadow: 0px 2px 10px #00000014;
+            @media (max-width: 768px) {
+                width: 260px;
+                margin-bottom: 24px;
+            }
+            img{
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+            }
+            .title{
+                padding: 16px 0;
+                color: #56C4C5;
+                font-weight: bold;
+                line-height: 1.5;
+            }
+            .text{
+                line-height: 1.5;
+            }
+        }
+    }    
+}
+.feature{
+    margin-bottom: 100px;
+    @media (max-width: 376px) {
+        margin-bottom: 60px;
+    }
+    .container{
+        display: flex;
+        flex-direction: row-reverse;
+        @media (max-width: 992px) {
+            flex-direction: column;
+            // justify-content: center;
+            align-items: center;
+        }
+    }
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+        row-gap: 28px;  /* new syntax for me */
+        column-gap: 47px;   /* new syntax for me */
+        @media (max-width: 992px) {
+            width: 100%;
+            justify-content: center;
+            margin-top: 8px;
+            gap: 0;
+        }
+        &-item{
+            width: 42.28%;  /* 230px */
+            height: 280px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0px 2px 10px #00000014;
+            @media (max-width: 992px) {
+                margin: 24px 16px 0;
+            }
+            @media (max-width: 576px) {
+                width: 230px;
+            }
+        }
+        .icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 86px;
+            height: 86px;
+            margin-bottom: 24px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 10px #00000014;
+            img{
+                width: 52px;
+                height: 52px;
+            }
+        }
+        .title{
+            margin-bottom: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 26px;
+        }
+        .text{
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+    .content{
+        @media (max-width: 992px) {
+            width: 100%;
+            text-align: center;
+        }
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h3{
+            margin-bottom: 16px;
+        }
+        .text{
+            margin-bottom: 24px;
+            font-size: 18px;
+            line-height: 26px;
+            @media (max-width: 376px) {
+                margin-bottom: 16px;
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+.comment{
+    margin-bottom: 100px;
+    @media (max-width: 376px) {
+        margin-bottom: 60px;
+    }
+    h3{
+        margin-bottom: 104px;
+        text-align: center;
+        @media (max-width: 376px) {
+            margin-bottom: 88px;
+        }
+    }
+    .card{
+        display: flex;
+        margin: 0 -8px;
+        
+        &-item{
+            flex: 1;
+            position: relative;
+            margin: 0 8px;
+            padding: 48px 32px 24px;
+            line-height: 1.5;
+            border-radius: 12px;
+            box-shadow: 0px 2px 10px #00000014;
+            ul{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            @media (max-width: 992px) {
+                &:nth-child(3){
+                    display: none;
+                }
+            }
+            @media (max-width: 768px) {
+                &:nth-child(2){
+                    display: none;
+                }
+            }
+        }
+        .photo{
+            position: absolute;
+            top: -56px;
+            left: 32px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .comment-text{
+            padding-bottom: 24px;
+            border-bottom: 1px solid #DDDDDD;
+        }
+        .company{
+            margin: 24px 0 8px;
+            font-weight: bold;
+        }
+        .star{
+            display: flex;
+            img{
+                height: 16px;
+                margin-left: 8px;
+            }
+        }
+    }
+    .dot{
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+        li{
+            width: 10px;
+            height: 10px;
+            background-color: #DDDDDD;
+            border-radius: 5px;
+            &.actived{
+                width: 16px;
+                background-color: #FFD153;
+            }
+        }
+        li+li{
+            margin-left: 8px;
+        }
+        a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.footer-plan{
+    height: 503px;
+    text-align: center;
+    background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/home_footer.svg");
+    background-repeat: repeat-x;
+    background-position: top center;
+    @media (max-width: 376px) {
+        background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/footer_sm.svg");
+        height: 461px;
+        h3{
+            font-size: 24px;
+            line-height: 35px;
+        }
+    }
+    ul{
+        padding-top: 260px;
+        @media (max-width: 376px) {
+            padding-top: 293px;
+        }
+    }
+    & li+li{
+        margin-top: 48px;
+        @media (max-width: 376px) {
+            margin-top: 24px;
+        }
+    }
+}

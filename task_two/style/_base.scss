@@ -1,0 +1,21 @@
+*, *::before, *::after{
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Noto Sans TC', sans-serif;
+	line-height: 1.5;
+	color: #221E1F;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+a{
+	text-decoration: none;
+	&:hover{
+		opacity: 0.9;
+	}
+}
+// sub{
+// 	vertical-align: sub;
+// }
