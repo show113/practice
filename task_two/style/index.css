@@ -196,6 +196,7 @@ h3 {
 }
 
 .navbar .logo {
+  width: 218.17px;
   height: 40px;
 }
 
@@ -206,6 +207,7 @@ h3 {
 
 @media (max-width: 576px) {
   .navbar .logo {
+    width: 130.91px;
     height: 24px;
   }
 }
