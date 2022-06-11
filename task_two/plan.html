@@ -10,6 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style/plan.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.ans').hide();
+			$('.accordion').click(function(){
+				$(this).toggleClass('actived');
+				$(this).find('.ans').slideToggle();
+			})
+
+			$('.top').click(function(e){
+				e.preventDefault();			
+				$('html').animate({scrollTop:0}, 500, 'swing');	//scrollTop:$('#div_id').position().top
+			})
+
+			$('.btn-plan').click(function(e){
+				e.preventDefault();
+				$(this).toggleClass('outline');
+				$(this).parent().siblings().find('a').addClass('outline');
+
+				var value = $(this).text().slice(0, -1);
+				var price_base = value * 0.06;
+				var price_standard = value * 0.16;
+				$('.num').text(value);
+				$('.price_base').text(price_base);
+				$('.price_standard').text(price_standard);
+				// $('.num').text(value).append([0]);
+			})
+		})
+	</script>
 </head>
 <body>
 	<a class="top" href="#">TOP</a>
@@ -31,11 +60,11 @@
 		<div class="container w904">
 			<h3>彈性選擇，提供您選擇最適合的方案</h3>
 			<ul class="btns">
-				<li><a href="#" class="btn-green">10000位</a></li>
-				<li><a href="#" class="btn-green outline">15000位</a></li>
-				<li><a href="#" class="btn-green outline">20000位</a></li>
-				<li><a href="#" class="btn-green outline">25000位</a></li>
-				<li><a href="#" class="btn-green outline">>25000位</a></li>
+				<li><a href="#" class="btn-plan btn-green">10000位</a></li>
+				<li><a href="#" class="btn-plan btn-green outline">15000位</a></li>
+				<li><a href="#" class="btn-plan btn-green outline">20000位</a></li>
+				<li><a href="#" class="btn-plan btn-green outline">25000位</a></li>
+				<li><a href="#" class="btn-plan btn-green outline">25000位</a></li>
 			</ul>
 			<ul class="card">
 				<li class="card-item">
@@ -44,12 +73,12 @@
 					<ul class="calculation">
 						<li class="rectangle">
 							<span class="subtitle">訂閱用戶數</span>
-							<span class="value green">10000<sub>位</sub></span>
+							<span class="value green"><span class="num">10000</span><sub>位</sub></span>
 						</li>
 						<li class="equal">=</li>
 						<li class="rectangle">
 							<span class="subtitle">試算每月的費用</span>
-							<span class="value">600<sub>TWD</sub></span>
+							<span class="value"><span class="price_base">600</span><sub>TWD</sub></span>
 						</li>
 					</ul>
 					<ul class="list">
@@ -66,12 +95,12 @@
 					<ul class="calculation">
 						<li class="rectangle">
 							<span class="subtitle">訂閱用戶數</span>
-							<span class="value green">10000<sub>位</sub></span>
+							<span class="value green"><span class="num">10000</span><sub>位</sub></span>
 						</li>
 						<li class="equal">=</li>
 						<li class="rectangle">
 							<span class="subtitle">試算每月的費用</span>
-							<span class="value">1600<sub>TWD</sub></span>
+							<span class="value"><span class="price_standard">1600</span><sub>TWD</sub></span>
 						</li>
 					</ul>
 					<ul class="list">
@@ -89,13 +118,15 @@
 		<div class="container w904">
 			<h3>常見問題</h3>
 			<ul class="card">
-				<li class="card-item">
+				<li class="card-item accordion">
 					<p class="question">我要怎麼變更方案？</p>
+					<p class="ans">請聯絡您的業務專員修改訂閱方案，我們將為您進行變更流程。</p>
 				</li>
-				<li class="card-item">
+				<li class="card-item accordion">
 					<p class="question">如果我沒有LINE官方帳號怎麼辦？</p>
+					<p class="ans">沒關係的，只要您是我們任何一個方案的夥伴，我們的專員可以協助辦理哦！</p>
 				</li>
-				<li class="card-item actived">
+				<li class="card-item accordion">
 					<p class="question">非上班日有客服支援嗎？</p>
 					<p class="ans">當然哦！我們錢都收了，不會拋棄你的！<br>請您直接來我們公司，我們假日也都在辦公室。</p>
 				</li>

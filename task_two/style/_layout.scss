@@ -10,6 +10,10 @@
     &.outline{
         color: #56C4C5;
         background-color: #fff;
+        &:hover{
+            color: #fff;
+            background-color: #56C4C5;
+        }
     }
 }
 .btn-orange{
@@ -44,7 +48,7 @@ h3{
     font-family: 'Wendy One', sans-serif;
     border-radius: 50%;
     background-color: #56C4C5;
-    z-index: 1;
+    z-index: 10;
     @media (max-width: 768px) {
         right: 32px;
     }

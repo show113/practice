@@ -9,7 +9,72 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style/index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+		$(document).ready(function(){
+			$('.top').click(function(e){
+				e.preventDefault();			
+				$('html').animate({scrollTop:0}, 500, 'swing');	//scrollTop:$('#div_id').position().top
+			})
+
+            const swiper = new Swiper('.swiper', {
+                // Optional parameters
+                // direction: 'vertical',
+                direction: 'horizontal',
+                // speed: 1000,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                },
+                effect: 'slide',
+                // If we need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // Navigation arrows
+                // navigation: {
+                //     nextEl: '.swiper-button-next',
+                //     prevEl: '.swiper-button-prev',
+                // },
+
+                // And if we need scrollbar
+                // scrollbar: {
+                //     el: '.swiper-scrollbar',
+                // },
+
+                /*  預設要顯示幾個卡片 */
+                slidesPerView: 1,
+                
+                /* 斷點設定 */
+                breakpoints: {
+                    /* 螢幕寬度大於等於 992px 時切換為 3 欄 */
+                    992: {
+                    slidesPerView: 3
+                    },
+                    /* 螢幕寬度大於等於 768px 時切換為 2 欄 */
+                    768: {
+                    slidesPerView: 2
+                    },
+                    /* 更小時都顯示 1 欄 */
+                    0: {
+                    slidesPerView: 1
+                    }
+                },
+                /* 卡片元素的間隔 */
+                spaceBetween: 16,
+                pagination: {
+                    /* 想將分頁圓點綁在哪個 class */
+                    el: ".swiper-pagination",
+                    /* 將輪播設定為可以點擊分頁圓點來切換圖片 */
+                    clickable: true
+                }
+            });
+		})
+	</script>
 </head>
 <body>
     <a class="top" href="#">TOP</a>
@@ -115,59 +180,67 @@
     <div class="comment">
         <div class="container">
             <h3>好評如潮</h3>
-            <ul class="card">
-                <li class="card-item">
-                    <img class="photo" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/user01.jpg" alt="大頭照">
-                    <p class="comment-text">原來聊天機器人可以這麼有人性！團隊有完整的行銷計畫提供數位整合，讓我們公司的產品用更活潑的方式讓使用者認識。</p>
-                    <p class="company">清心寡慾設計公司</p>
-                    <ul>
-                        <li class="name">Lina 執行長</li>
-                        <li class="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                        </li>
-                    </ul>
-                </li>
-                <li class="card-item">
-                    <img class="photo" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/user02.jpg" alt="大頭照">
-                    <p class="comment-text">團隊很積極的協助行銷追蹤，針對機器人進行優化，讓我們一個月內提高10000個追蹤者，客戶體驗回饋很正面！</p>
-                    <p class="company">subwhat 行銷公司</p>
-                    <ul>
-                        <li class="name">Zoe 活動長</li>
-                        <li class="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                        </li>
-                    </ul>
-                </li>
-                <li class="card-item">
-                    <img class="photo" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/user03.jpg" alt="大頭照">
-                    <p class="comment-text">經營了好久的IG，一直無法提升粉絲數，和團隊合作後，才知道可以用聊天機器人玩這麼豐富的行銷活動！太讚拉～</p>
-                    <p class="company">油土伯</p>
-                    <ul>
-                        <li class="name">HowBig</li>
-                        <li class="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                            <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="dot">
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li class="actived"><a href="#"></a></li>
-            </ul>
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper card">
+                <!-- Slides -->
+                    <div class="swiper-slide card-item">
+                        <img class="photo" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/user01.jpg" alt="大頭照">
+                        <p class="comment-text">原來聊天機器人可以這麼有人性！團隊有完整的行銷計畫提供數位整合，讓我們公司的產品用更活潑的方式讓使用者認識。</p>
+                        <p class="company">清心寡慾設計公司</p>
+                        <ul>
+                            <li class="name">Lina 執行長</li>
+                            <li class="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card-item">
+                        <img class="photo" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/user02.jpg" alt="大頭照">
+                        <p class="comment-text">團隊很積極的協助行銷追蹤，針對機器人進行優化，讓我們一個月內提高10000個追蹤者，客戶體驗回饋很正面！</p>
+                        <p class="company">subwhat 行銷公司</p>
+                        <ul>
+                            <li class="name">Zoe 活動長</li>
+                            <li class="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-slide card-item">
+                        <img class="photo" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/user03.jpg" alt="大頭照">
+                        <p class="comment-text">經營了好久的IG，一直無法提升粉絲數，和團隊合作後，才知道可以用聊天機器人玩這麼豐富的行銷活動！太讚拉～</p>
+                        <p class="company">油土伯</p>
+                        <ul>
+                            <li class="name">HowBig</li>
+                            <li class="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                                <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/chatTalker_images/icon_star.svg" alt="star">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            
+                <!-- If we need navigation buttons -->
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
+            
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
         </div>
     </div>
     <div class="footer-plan">
